@@ -133,7 +133,24 @@ public class JitsiMeetView extends BaseReactView<JitsiMeetViewListener>
                 && !JitsiMeetActivityDelegate.arePermissionsBeingRequested()
                 && this.url != null) {
             try {
-                pipModule.enterPictureInPicture();
+                val actions: ArrayList<RemoteAction> = ArrayList()
+                val remoteAction = RemoteAction(
+                    Icon.createWithResource(this@MainActivity, 
+                      android.R.drawable.ic_menu_info_details),
+                      "Info","Info Details",
+                    PendingIntent.getActivity(this@MainActivity, 0, 
+                    Intent(Intent.ACTION_VIEW, Uri.parse("http://www.google.com")), 0)
+                )
+                //Add the above action to the List
+                actions.add(remoteAction)
+                val aspectRatio = Rational(16, 9)
+                val params = PictureInPictureParams
+                    .Builder()
+                    .setAspectRatio(aspectRatio)
+                //Set the list of actions to the params
+                    .setActions(actions)
+                    .build()
+                pipModule.enterPictureInPicture(params);
             } catch (RuntimeException re) {
                 JitsiMeetLogger.e(re, "Failed to enter PiP mode");
             }

@@ -67,7 +67,7 @@
         "installExtensionText": ""
     },
     "connectingOverlay": {
-        "joiningRoom": "Connecting you to your meeting…"
+        "joiningRoom": "Connecting { main-enGB } you to your meeting…"
     },
     "connection": {
         "ATTACHED": "Attached",

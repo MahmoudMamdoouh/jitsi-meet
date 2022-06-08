@@ -121,7 +121,7 @@
         "installExtensionText": "Install the extension for Google Calendar and Office 365 integration"
     },
     "connectingOverlay": {
-        "joiningRoom": "Connecting you to your meeting..."
+        "joiningRoom": "Connecting { main.json } you to your meeting..."
     },
     "connection": {
         "ATTACHED": "Attached",
